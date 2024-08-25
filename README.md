@@ -15,7 +15,7 @@ Turner's Treats is a simple, responsive website designed to showcase artisanal b
 
 
 
-### `Final_code.html`
+### `Home.html`
 
 The main page of the website. Includes:
 - Header with navigation.
@@ -25,14 +25,6 @@ The main page of the website. Includes:
 - Order form with conditional delivery address input.
 - Blog section with placeholder content.
 - Footer with contact information.
-
-### `bread_items.html`
-
-A page dedicated to "Artisanal Breads" with descriptions and details of various bread items.
-
-### `pastries_treats.html`
-
-A page dedicated to "Artisanal Pastries and Treats" featuring descriptions and details of different pastries and treats.
 
 ### `images/`
 

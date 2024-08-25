@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turner's Treats</title>
+    <style>
+       body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('images/background_image.jpg');
+            background-size: cover;
+            background-position: top left;
+            background-repeat: repeat;
+            background-attachment: fixed;
+        }
+
+        header {
+            background-color: rgba(248, 194, 145, 0.8);
+            padding: 1rem;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav li {
+            margin: 0 1rem;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.1rem;
+        }
+
+        nav a:hover {
+            text-decoration: underline; /* Optional: Underline on hover for better UX */
+        }
+
+        h1, h2, h3 {
+            color: #333;
+        }
+
+        section {
+            padding: 2rem;
+            margin: 1rem auto;
+            max-width: 1200px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 8px;
+        }
+
+        footer {
+            background-color: rgba(51, 51, 51, 0.8);
+            color: #fff;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        footer a {
+            color: #f8c291;
+            text-decoration: none;
+        }
+
+        .welcome-section {
+            text-align: center;
+        }
+
+        .welcome-section h1 {
+            margin-bottom: 1rem;
+        }
+
+        .welcome-section p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .product-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+
+        .product-item {
+            border: 1px solid #ddd;
+            padding: 1rem;
+            text-align: center;
+            background-color: #fff;
+            border-radius: 8px;
+        }
+
+        .product-item img {
+            width: 100%;
+            height: auto;
+            border-bottom: 1px solid #ddd;
+            margin-bottom: 1rem;
+        }
+
+        .product-item p {
+            margin: 0;
+            font-size: 1rem;
+        }
+
+        .product-item a {
+            text-decoration: none; /* Remove underline from links */
+            color: inherit; /* Inherit color from parent element */
+        }
+
+        .product-item a:hover {
+            text-decoration: underline; /* Optional: add underline on hover */
+            color: #f8c291; /* Optional: change color on hover */
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .contact-form label, .contact-form select, .contact-form textarea, .contact-form input {
+            display: block;
+            margin-bottom: 1rem;
+            width: 100%;
+        }
+
+        .contact-form textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .contact-form button {
+            padding: 0.5rem 1rem;
+            border: none;
+            background-color: #f8c291;
+            color: #fff;
+            font-size: 1rem;
+            cursor: pointer;
+            margin-right: 1rem; /* Space between buttons */
+        }
+
+        .contact-form button:hover {
+            background-color: #e07b39; /* Darker shade on hover */
+        }
+
+        .review-section {
+            margin-top: 2rem;
+        }
+
+        .query-section {
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="Home.html">Home</a></li>
+                <li><a href="About.html">About</a></li>
+                <li><a href="Products.html">Products</a></li>
+                <li><a href="Order.html">Order</a></li>
+                <li><a href="Blog.html">Blog</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="welcome" class="welcome-section">
+        <h1>Welcome to Turner's Treats!</h1>
+        <p>Experience the finest artisanal breads and pastries, crafted with love and care. Our selection of baked goods is made from the highest quality ingredients to ensure every bite is a delight.</p>
+        <h2>Featured Products</h2>
+        <div class="product-gallery">
+            <!-- Product 1 -->
+            <div class="product-item">
+                <a href="bread_items.html">
+                    <img src="images/product_1.jpg" alt="Artisanal Breads">
+                    <p>Artisanal Breads</p>
+                </a>
+            </div>
+            <!-- Product 2 -->
+            <div class="product-item">
+                <a href="pastries_treats.html">
+                    <img src="images/product_2.jpg" alt="Artisanal Pastries and Treats">
+                    <p>Artisanal Pastries and Treats</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <form id="contact-form" class="contact-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+
+            <div class="query-section">
+                <button type="button" id="submit-query">Submit Query</button>
+            </div>
+
+            <div class="review-section">
+                <label for="rating">Rating (1-10):</label>
+                <select id="rating" name="rating" required>
+                    <option value="">Select a rating</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                </select>
+                
+                <label for="review">Comments:</label>
+                <textarea id="review" name="review"></textarea>
+
+                <button type="button" id="submit-review">Submit Review</button>
+            </div>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Turner's Treats. All rights reserved.</p>
+        <p>Contact us: <a href="mailto:info@turnerstreats.com">info@turnerstreats.com</a></p>
+        <p>Follow us on <a href="#">Social Media</a></p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const form = document.getElementById('contact-form');
+            const submitQueryButton = document.getElementById('submit-query');
+            const submitReviewButton = document.getElementById('submit-review');
+
+            submitQueryButton.addEventListener('click', () => {
+                const formData = new FormData(form);
+                // Extract query-related data
+                const name = formData.get('name');
+                const email = formData.get('email');
+                const message = formData.get('message');
+
+                alert(`Query submitted:\nName: ${name}\nEmail: ${email}\nMessage: ${message}`);
+                // You can handle the form data here (e.g., send it to a server)
+            });
+
+            submitReviewButton.addEventListener('click', () => {
+                const formData = new FormData(form);
+                // Extract review-related data
+                const rating = formData.get('rating');
+                const review = formData.get('review');
+
+                alert(`Review submitted:\nRating: ${rating}\nComments: ${review}`);
+                // You can handle the form data here (e.g., send it to a server)
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turner's Treats - Products</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('images/background_image.jpg');
+            background-size: cover;
+            background-position: top left;
+            background-repeat: repeat;
+            background-attachment: fixed;
+        }
+        header {
+            background-color: rgba(248, 194, 145, 0.8);
+            padding: 1rem;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav li {
+            margin: 0 1rem;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.1rem;
+        }
+
+        section {
+            padding: 2rem;
+            margin: 1rem auto;
+            max-width: 1200px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 8px;
+        }
+
+        footer {
+            background-color: rgba(51, 51, 51, 0.8);
+            color: #fff;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        footer a {
+            color: #f8c291;
+            text-decoration: none;
+        }
+
+        .carousel-container {
+            position: relative;
+            overflow: hidden;
+            max-width: 100%;
+            border-radius: 8px;
+            margin-bottom: 2rem; /* Add spacing between carousels */
+        }
+
+        .carousel-slide {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .carousel-item {
+            min-width: 100%;
+        }
+
+        .carousel-item img {
+            width: 100%;
+            height: auto;
+        }
+
+        .carousel-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            border: none;
+            padding: 1rem;
+            cursor: pointer;
+            z-index: 10;
+        }
+
+        .carousel-button.prev {
+            left: 0;
+        }
+
+        .carousel-button.next {
+            right: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="Home.html">Home</a></li>
+                <li><a href="About.html">About</a></li>
+                <li><a href="Products.html">Products</a></li>
+                <li><a href="Order.html">Order</a></li>
+                <li><a href="Blog.html">Blog</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section>
+        <h1>Artisanal Breads</h1>
+        <div class="carousel-container">
+            <div class="carousel-slide" id="bread-carousel">
+                <div class="carousel-item">
+                    <img src="images\product images\Breads\Bread_1_sour.jpg" alt="Artisanal Bread 1">
+                </div>
+                <div class="carousel-item">
+                    <img src="images\product images\Breads\Bread_2_bag.jpg" alt="Artisanal Bread 2">
+                </div>
+                <div class="carousel-item">
+                    <img src="images\product images\Breads\Bread_3_vienna.jpg" alt="Artisanal Bread 3">
+                </div>
+                <!-- Add more bread items as needed -->
+            </div>
+            <button class="carousel-button prev" id="bread-prev">&#10094;</button>
+            <button class="carousel-button next" id="bread-next">&#10095;</button>
+        </div>
+    </section>
+
+    <section>
+        <h1>Pastries and Treats</h1>
+        <div class="carousel-container">
+            <div class="carousel-slide" id="pastry-carousel">
+                <div class="carousel-item">
+                    <img src="images\product images\Pastries_and_Treats\Pastry_1_mille.jpg" alt="Pastry 1">
+                </div>
+                <div class="carousel-item">
+                    <img src="images\product images\Pastries_and_Treats\Pastry_2_strudel.jpg" alt="Pastry 2">
+                </div>
+                <div class="carousel-item">
+                    <img src="images\product images\Pastries_and_Treats\Pastry_3_tiramisu.jpg" alt="Pastry 3">
+                </div>
+                <div class="carousel-item">
+                    <img src="images\product images\Pastries_and_Treats\Pastry_4_cannoli.jpg" alt="Pastry 4">
+                </div>
+                <div class="carousel-item">
+                    <img src="images\product images\Pastries_and_Treats\Pastry_5_danish.jpg" alt="Pastry 5">
+                </div>
+                <div class="carousel-item">
+                    <img src="images\product images\Pastries_and_Treats\Pastry_6_crois.jpg" alt="Pastry 6">
+                </div>
+                <!-- Add more pastry items as needed -->
+            </div>
+            <button class="carousel-button prev" id="pastry-prev">&#10094;</button>
+            <button class="carousel-button next" id="pastry-next">&#10095;</button>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Turner's Treats. All rights reserved.</p>
+        <p>Contact us: <a href="mailto:info@turnerstreats.com">info@turnerstreats.com</a></p>
+        <p>Follow us on <a href="#">Social Media</a></p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const breadCarousel = document.getElementById('bread-carousel');
+            const breadPrevButton = document.getElementById('bread-prev');
+            const breadNextButton = document.getElementById('bread-next');
+            const pastryCarousel = document.getElementById('pastry-carousel');
+            const pastryPrevButton = document.getElementById('pastry-prev');
+            const pastryNextButton = document.getElementById('pastry-next');
+            
+            function initializeCarousel(carousel, prevButton, nextButton) {
+                let index = 0;
+                const items = carousel.querySelectorAll('.carousel-item');
+                const totalItems = items.length;
+
+                function updateCarousel() {
+                    const offset = -index * 100;
+                    carousel.style.transform = `translateX(${offset}%)`;
+                }
+
+                nextButton.addEventListener('click', () => {
+                    index = (index + 1) % totalItems;
+                    updateCarousel();
+                });
+
+                prevButton.addEventListener('click', () => {
+                    index = (index - 1 + totalItems) % totalItems;
+                    updateCarousel();
+                });
+
+                // Initialize carousel
+                updateCarousel();
+            }
+
+            // Initialize both carousels
+            initializeCarousel(breadCarousel, breadPrevButton, breadNextButton);
+            initializeCarousel(pastryCarousel, pastryPrevButton, pastryNextButton);
+        });
+    </script>
+</body>
+</html>
